@@ -23,7 +23,7 @@ public class TripEntry {
 	// got to organize better, also take care of validatation that start time but be
 	// les than endtime, might have tpo use try catch blocks
 	// logic to return the timein minutes (StartTime - EndTime)
-	public int getTripTimeinMinutes() throws NumberFormatException {
+	public int getTripTimeinMinutes() throws NumberFormatException, InvalidTimeException {
 		
 		String startTimeHourAndMin[] = startTime.split(":");// hour at 0 index, Min at 1 index eg startTimeFormat: 17:05
 		String endTimeHourAndMin[] = endTime.split(":");
@@ -31,8 +31,11 @@ public class TripEntry {
 		
 		try {
 			if (Integer.parseInt(startTimeHourAndMin[0]) > Integer.parseInt(endTimeHourAndMin[0])) {
-				// got to implement throw exception as this is invalid, startTime can never be
-				// greater than end time
+				
+				// got to implement throw exception as this is invalid, startTime can never be greater than end time
+				
+				throw new InvalidTimeException("Invalid Time Exception. Start Time is greater than End Time.");
+
 
 			} else {
 				curTripTime = (Integer.parseInt(endTimeHourAndMin[0]) - Integer.parseInt(startTimeHourAndMin[0]))

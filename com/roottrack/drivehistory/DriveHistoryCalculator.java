@@ -27,8 +27,7 @@ public class DriveHistoryCalculator {
 			while (sc.hasNextLine()) {
 				String line = sc.nextLine();
 
-				// current line will be of the pattern "Driver Bod" || "Trip Dan 07:15 07:45
-				// 17.3"
+				// current line will be of the pattern "Driver Bod" || "Trip Dan 07:15 07:45 17.3"
 				String words[] = line.split(" ");
 				if (words[0].equals("Driver")) {
 					addDriverInToSystem(words[1]);
@@ -45,7 +44,8 @@ public class DriveHistoryCalculator {
 			}
 		} catch (IOException e) {
 
-			// Need to Handle
+			System.err.println("File Exception - "+e.getMessage());
+			
 		}
 
 		finally {
@@ -101,6 +101,8 @@ public class DriveHistoryCalculator {
 			}
 		} catch (NumberFormatException e) {
 			_return.add("Invalid Data - " + e.getMessage());
+		} catch (InvalidTimeException ie) {
+			_return.add(ie.getMessage());
 		}
 	}
 
