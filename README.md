@@ -17,10 +17,11 @@ Every time a trip entry is found in the input file, the Driver name which acts a
 
 ### Highlevel view of  core Data structure in use 
 
-
-	**HashMap**< String driverName, DriveHistory driverHist >
-	**DriveHistory**:  < String driverName, ArrayList<TripEntry> validTripsList, TotalDistance, TotalTime>
-	**TripEntry**: < Distance, startTime and endTime >
+```
+HashMap<String driverName, DriveHistory driverHist>
+DriveHistory:  <String driverName, ArrayList<TripEntry> validTripsList, TotalDistance, TotalTime>
+TripEntry: <Distance, startTime and endTime>
+```
 
 
 The coding standards and the naming conventions helps understand the code easily to a new person working on this code base, In addition the comments explaining the functionality at places needed makes the code even more comprehensable.
@@ -39,19 +40,21 @@ The coding standards and the naming conventions helps understand the code easily
 
 ### Usage
 
-	#### Through command prompt
-	The Main method accepts an optional input filename as the argument from stdin. Please follow the below steps.
-	1. Open the command prompt and move to the project directory "root-track-drivehistory".
-	2. Execute the Main method, which is the entry point of root-track-drivehistory using following commands:
+#### Through command prompt
+The Main method accepts an optional input filename as the argument from stdin. Please follow the below steps.
+1. Open the command prompt and move to the project directory "root-track-drivehistory".
+2. Execute the Main method, which is the entry point of root-track-drivehistory using following commands:
 	
-		`javac -cp . com.roottrack.drivehistory.Main.java`
-		`java -cp . com.roottrack.drivehistory.Main [input file path]`
+```
+javac -cp . com.roottrack.drivehistory.Main.java
+java -cp . com.roottrack.drivehistory.Main [input file path]
+```
 	
-	3. If the optional argument [input file path] is not passed, then the Main method functions on the default input file present at "/root-track-drivehistory/InputFiles/input.txt"
+3. If the optional argument [input file path] is not passed, then the Main method functions on the default input file present at "/root-track-drivehistory/InputFiles/input.txt"
 	
-	#### Through Eclipse or other IDE
-	1. Clone this project from git, Use the option of "Import the existing project into workspace" if Eclipse is the IDE in use.
-	2. Right click on the Main.java file shown on the Package Explorer and click on run as Java Application to see the output on the console, remember that the contents on the `/root-track-drivehistory/InputFiles/input.txt` is processed by default.
+#### Through Eclipse or other IDE
+1. Clone this project from git, Use the option of "Import the existing project into workspace" if Eclipse is the IDE in use.
+2. Right click on the Main.java file shown on the Package Explorer and click on run as Java Application to see the output on the console, remember that the contents on the `/root-track-drivehistory/InputFiles/input.txt` is processed by default.
 	
 	
 
